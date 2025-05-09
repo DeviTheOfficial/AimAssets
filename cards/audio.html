@@ -1,3 +1,5 @@
+<!-- cards/audio.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,14 +21,81 @@
       <li><a href="../about.html">About</a></li>
     </ul>
   </nav>
+
   <main>
-    <h1>Audio</h1>
-    <p>Music & SoundFX</p>
-    <!-- add your detailed content here -->
+    <h1>Audio Assets</h1>
+
+    <!-- ── Search & Random Controls ── -->
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search Cards..." />
+      <button id="random-btn">Random Card</button>
+    </div>
+
+    <div id="asset-grid"></div>
   </main>
 
   <footer>
     <p>&copy; 2025 Aim Assets</p>
   </footer>
+
+  <script>
+    // 1) Fetch & render
+    let assetsList = [];
+
+    function renderAssets(list) {
+      const grid = document.getElementById('asset-grid');
+      grid.innerHTML = '';
+      list.forEach(a => {
+        const card = document.createElement('div');
+        card.className = 'card-item';
+        card.dataset.name = a.name.toLowerCase();
+        card.innerHTML = `
+          <img src="${a.thumbnail}" alt="${a.name}" />
+          <h2>${a.name}</h2>
+          <p>${a.type}</p>
+          <div class="buttons">
+            ${a.downloadUrl
+              ? `<a href="${a.downloadUrl}" class="btn">Download</a>`
+              : ''}
+            ${a.storeLink
+              ? `<a href="${a.storeLink}" class="btn" target="_blank">View on Store</a>`
+              : ''}
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    fetch('audio-assets.json')
+      .then(res => res.json())
+      .then(data => {
+        assetsList = data;
+        renderAssets(assetsList);
+      })
+      .catch(err => console.error('Failed to load assets manifest:', err));
+
+    // 2) Search & filter
+    const searchInput = document.getElementById('search');
+    searchInput.addEventListener('input', e => {
+      const term = e.target.value.toLowerCase();
+      const filtered = assetsList.filter(a =>
+        a.name.toLowerCase().includes(term) ||
+        a.type.toLowerCase().includes(term)
+      );
+      renderAssets(filtered);
+    });
+
+    // 3) Random pick
+    const randomBtn = document.getElementById('random-btn');
+    randomBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      if (!assetsList.length) return;
+      const pick = assetsList[Math.floor(Math.random() * assetsList.length)];
+      renderAssets([pick]);
+      // scroll the single card into view
+      const cardEl = document.querySelector('.card-item');
+      if (cardEl) cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
 </body>
 </html>
