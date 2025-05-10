@@ -1,17 +1,24 @@
 [
     {
-      "name": "Sci-Fi Audio",
+      "name": "Gadget Pickup SFX Pack",
       "thumbnail": "../assets/images/audio-icons/audio-basic.png",
       "type": "Sound FX",
-      "downloadUrl": "https://cdn.discordapp.com/attachments/1370505991115899005/1370506107675611187/Test-File.zip?ex=681fbec6&is=681e6d46&hm=cf7f4e32be93b1e325ff6bbff23e70c3742fe5cf135f936b598be48cabe64a3a&",
+      "downloadUrl": "https://cdn.discordapp.com/attachments/1370512529704489083/1370565221227167846/Gadget_Pickup_SFX_Pack.zip?ex=681ff5d4&is=681ea454&hm=d467a8b3b40ae3d6b5cab7b2d062f51b11a201971566188923df24463c19b172&",
       "storeLink": null
     },
     {
-      "name": "Ultimate Footsteps",
+      "name": "Battle Sound Library - Magic & Melee - Fantasy RPG",
       "thumbnail": "../assets/images/audio-icons/audio-basic.png",
       "type": "Sound FX",
       "downloadUrl": null,
-      "storeLink": "https://drive.google.com/drive/folders/1Jy2gIRJVEWO1RHOxBQJYxhGuzpFFEV0n?usp=drive_link"
+      "storeLink": "https://assetstore.unity.com/packages/audio/sound-fx/weapons/battle-sound-library-magic-melee-fantasy-rpg-176417"
+    },
+    {
+      "name": "Fun Casual Sounds",
+      "thumbnail": "../assets/images/audio-icons/audio-basic.png",
+      "type": "Sound FX",
+      "downloadUrl": "https://assetstore.unity.com/packages/audio/sound-fx/fun-casual-sounds-64048",
+      "storeLink": null
     }
   ]
   

@@ -38,9 +38,9 @@ const cardData = [
     url: 'cards/ui.html'
   },
   {
-    label: 'Templates & Prefabs',
+    label: 'Templates',
     img: 'assets/images/templates-prefabs.png',
-    description: 'Character Prefabs, Item/Prop Prefabs, UI Prefabs',
+    description: 'Templates for all types of assets',
     url: 'cards/templates-prefabs.html'
   },
   {
@@ -50,8 +50,8 @@ const cardData = [
     url: 'cards/documentation.html'
   },
   {
-    label: 'Tests & CI',
-    img: 'assets/images/tests-ci.png',
+    label: 'Full Projects',
+    img: 'assets/images/full-projects.png',
     description: 'Automated Tests, Build Pipelines',
     url: 'cards/tests-ci.html'
   },
@@ -64,7 +64,7 @@ const cardData = [
   {
     label: 'Performance & Optimization',
     img: 'assets/images/performance.png',
-    description: 'Profiling Data, Optimization Assets, Build Settings & Stripping Configs',
+    description: 'Profiling Data, Build Settings, Optimization Assets, Automated Tests, CI Pipelines',
     url: 'cards/performance.html'
   },
   {
